@@ -2,7 +2,8 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-
+import './ant.config';
+import 'ant-design-vue/dist/antd.css';
 import '../src/assets/scss/_index.scss';
 
 Vue.config.productionTip = false;
