@@ -1,6 +1,4 @@
 import axios from 'axios';
-import urlHtml from './urlHtml.js';
-
 import { common, setAjax, tipsFail } from './utils'; // 引入url选择
 // 添加请求拦截器， 在发送请求前 做些什么 例如添加接口公参，
 axios.interceptors.request.use(
@@ -74,22 +72,7 @@ axios.defaults.withCredentials = false;
 // 普通接口  注释：提交文件类不可用或要修改
 export const tools = {
   async ajax (cfg) {
-    // cfg.url = process.env.VUE_APP_BASE_URL + cfg.url;//测试
-    // cfg.url = '/api' + cfg.url;
-    cfg.url = 'https://crm.hwasbank.com/hclub-service' + cfg.url;// 正式
-    // cfg.url = urlHtml.url + cfg.url;
-    if (cfg.method === 'get') {
-      cfg.params = {
-        ...cfg.data
-      };
-    }
-
-    const res = await axios(cfg);
-    return res;
-  },
-  async ccdAjax (cfg) {
-    // cfg.url = 'https://testapp.aifound.cn' + cfg.url;
-    cfg.url = 'https://app.aifound.cn' + cfg.url;
+    cfg.url = process.env.VUE_APP_API_BASE_URL + cfg.url;
     if (cfg.method === 'get') {
       cfg.params = {
         ...cfg.data

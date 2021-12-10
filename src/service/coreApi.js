@@ -1,5 +1,10 @@
 import { tools } from '@/utils/tools';
-import url from './url';
+
+const url = {
+  // 获取token
+  getToken: '/authentication/getToken'
+
+};
 
 // 获取token
 export const getToken = data => {
